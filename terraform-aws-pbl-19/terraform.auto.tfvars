@@ -16,7 +16,13 @@ preferred_number_of_private_subnets = 4
 
 environment ="dev"
 
-ami = "ami-07dfed28fcf95241c"
+ami-web = "ami-013ac1c58eafe63e6"
+
+ami-nginx = "ami-038ca5699b1a5bfd4"
+
+ami-sonar = "ami-0968a8188d5b26ad8"
+
+ami-bastion = "ami-0edce88339920269c"
 
 keypair = "west2KP"
 

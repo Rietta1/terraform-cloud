@@ -1,6 +1,7 @@
+# note the resource using this ami is our sonarqube
 variable "region" {
   type    = string
-  default = "us-east-1"
+  default = "us-west-2"
 }
 
 locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
@@ -13,15 +14,7 @@ source "amazon-ebs" "terraform-ubuntu-prj-19" {
   ami_name      = "terraform-ubuntu-prj-19-${local.timestamp}"
   instance_type = "t2.micro"
   region        = var.region
-  source_ami_filter {
-    filters = {
-      name                = "ubuntu/images/*ubuntu-xenial-16.04-amd64-server-*"
-      root-device-type    = "ebs"
-      virtualization-type = "hvm"
-    }
-    most_recent = true
-    owners      = ["099720109477"]
-  }
+  source_ami = "ami-0c65adc9a5c1b5d7c"
   ssh_username = "ubuntu"
   tag {
     key   = "Name"
