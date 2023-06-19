@@ -51,16 +51,37 @@ variable "environment" {
   
 }
 
-variable "ami" {
+
+variable "ami-web" {
   type = string
   description = "AMI ID for launch template"
   
 }
 
+variable "ami-nginx" {
+  type = string
+  description = "AMI ID for launch template"
+  
+}
+
+variable "ami-sonar" {
+  type = string
+  description = "AMI ID for launch template"
+  
+}
+
+variable "ami-bastion" {
+  type = string
+  description = "AMI ID for launch template"
+  
+}
+
+
 variable "keypair" {
   type = string
   description = "key-pair for instances"
 }
+
 
 variable "account_no" {
   type = number
